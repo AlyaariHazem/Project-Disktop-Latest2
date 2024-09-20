@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="cd72fe19e54c4819bb67811019a673c1" Name="Diagram1" ZoomLevel="87">
+        <EntityTypeShape EntityType="SchoolDBModel.C__EFMigrationsHistory" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Classes" Width="1.5" PointX="3.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Divisions" Width="1.5" PointX="3" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Guardians" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Managers" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Salarys" Width="1.5" PointX="9.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Schools" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Stage" PointX="12.375" PointY="0.75" Width="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Stages" Width="1.5" PointX="1.5" PointY="15.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Students" Width="1.5" PointX="5.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Subjects" Width="1.5" PointX="7.5" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.SubjectStudents" Width="1.5" PointX="7.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Teachers" Width="1.5" PointX="7.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.TeacherSubjectStudent" Width="1.5" PointX="9.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Users" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolDBModel.Years" Width="1.5" PointX="1.5" PointY="19.375" IsExpanded="true" />
+        <AssociationConnector Association="SchoolDBModel.FK_Classes_Stages_StageID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_Divisions_Classes_ClassID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_Subjects_Classes_ClassID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_Students_Divisions_DivisionID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_Guardians_Users_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_Students_Guardians_GuardianID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_Managers_Schools_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_Managers_Users_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_Teachers_Managers_ManagerID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_Salarys_Teachers_TeacherID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_Years_Schools_SchoolID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_Stages_Years_YearID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_Students_Users_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_SubjectStudents_Students_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_TeacherSubjectStudent_Students_StudentID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_SubjectStudents_Subjects_SubjectID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_TeacherSubjectStudent_Subjects_SubjectID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_Teachers_Users_UserID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.FK_TeacherSubjectStudent_Teachers_TeacherID" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.StudentClass" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolDBModel.TeacherStudents" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SchoolDBModel.Grades" Width="1.5" PointX="7.625" PointY="14.25" />
+        <AssociationConnector Association="SchoolDBModel.FK_Grades_Students" />
+        <EntityTypeShape EntityType="SchoolDBModel.MONTH" Width="1.5" PointX="3.75" PointY="19.375" />
+        <AssociationConnector Association="SchoolDBModel.FK_Grades_MONTHS" />
+        <AssociationConnector Association="SchoolDBModel.FK_Grades_subjects" />
+        <AssociationConnector Association="SchoolDBModel.FK_Grades_users" />
+        <AssociationConnector Association="SchoolDBModel.FK_MONTHS_users" />
+        <AssociationConnector Association="SchoolDBModel.FK_MONTHS_yera" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

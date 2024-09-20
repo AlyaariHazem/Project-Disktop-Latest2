@@ -1,0 +1,1721 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SchoolDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Classes">
+          <Key>
+            <PropertyRef Name="ClassID" />
+          </Key>
+          <Property Name="ClassID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClassName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ClassYear" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="StageID" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="int" />
+        </EntityType>
+        <EntityType Name="Divisions">
+          <Key>
+            <PropertyRef Name="DivisionID" />
+          </Key>
+          <Property Name="DivisionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DivisionName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ClassID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Grades">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="testing_value" Type="int" Nullable="false" />
+          <Property Name="share_value" Type="int" Nullable="false" />
+          <Property Name="atendance_value" Type="int" Nullable="false" />
+          <Property Name="shafahi_value" Type="int" Nullable="false" />
+          <Property Name="homework_value" Type="int" Nullable="false" />
+          <Property Name="studentID" Type="int" Nullable="false" />
+          <Property Name="subject_id" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="month_id" Type="int" Nullable="false" />
+          <Property Name="note" Type="nchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Guardians">
+          <Key>
+            <PropertyRef Name="GuardianID" />
+          </Key>
+          <Property Name="GuardianID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName_FirstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullName_SecondName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullName_ThirdName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullName_LastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Job" Type="nvarchar(max)" />
+          <Property Name="TypeGuardian" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Managers">
+          <Key>
+            <PropertyRef Name="ManagerID" />
+          </Key>
+          <Property Name="ManagerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName_FirstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullName_SecondName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullName_ThirdName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullName_LastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Age" Type="int" />
+          <Property Name="SchoolID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MONTHS">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="value" Type="nchar" MaxLength="100" />
+          <Property Name="YearID" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="note" Type="nchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Salarys">
+          <Key>
+            <PropertyRef Name="SalaryID" />
+          </Key>
+          <Property Name="SalaryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SalaryMonth" Type="date" Nullable="false" />
+          <Property Name="SalaryHireDate" Type="date" Nullable="false" />
+          <Property Name="Note" Type="nvarchar(max)" />
+          <Property Name="SalaryAmount" Type="int" Nullable="false" />
+          <Property Name="TeacherID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schools">
+          <Key>
+            <PropertyRef Name="SchoolID" />
+          </Key>
+          <Property Name="SchoolID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SchoolName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SchoolNameEn" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="School_Crea_Date" Type="date" Nullable="false" />
+          <Property Name="SchoolVison" Type="nvarchar(max)" />
+          <Property Name="SchoolMission" Type="nvarchar(max)" />
+          <Property Name="SchoolGoal" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SchoolPhone" Type="int" Nullable="false" />
+          <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="SchoolType" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="fax" Type="int" />
+          <Property Name="zone" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Stage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StageName" Type="nvarchar" MaxLength="255" />
+          <Property Name="Note" Type="nvarchar(max)" />
+          <Property Name="active" Type="int" />
+        </EntityType>
+        <EntityType Name="Stages">
+          <Key>
+            <PropertyRef Name="StageID" />
+          </Key>
+          <Property Name="StageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StageName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Note" Type="nvarchar(max)" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="HireDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="YearID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StudentClass">
+          <Key>
+            <PropertyRef Name="ClassID" />
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="ClassID" Type="int" Nullable="false" />
+          <Property Name="StudentID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName_FirstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullName_SecondName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullName_ThirdName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullName_LastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="DateOfBirth" Type="date" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar(max)" />
+          <Property Name="GuardianID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="DivisionID" Type="int" Nullable="false" />
+          <Property Name="URLImage" Type="nvarchar" MaxLength="255" />
+          <Property Name="PayMent" Type="int" />
+          <Property Name="PlaceOFBirth" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="Subjects">
+          <Key>
+            <PropertyRef Name="SubjectID" />
+          </Key>
+          <Property Name="SubjectID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubjectName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ClassID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SubjectStudents">
+          <Key>
+            <PropertyRef Name="SubjectID" />
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="SubjectID" Type="int" Nullable="false" />
+          <Property Name="StudentID" Type="int" Nullable="false" />
+          <Property Name="Grade" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Teachers">
+          <Key>
+            <PropertyRef Name="TeacherID" />
+          </Key>
+          <Property Name="TeacherID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName_FirstName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullName_SecondName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullName_ThirdName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullName_LastName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="PhoneNum" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" />
+          <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Age" Type="int" />
+          <Property Name="HireDate" Type="date" Nullable="false" />
+          <Property Name="ManagerID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TeacherStudents">
+          <Key>
+            <PropertyRef Name="StudentID" />
+            <PropertyRef Name="TeacherID" />
+          </Key>
+          <Property Name="StudentID" Type="int" Nullable="false" />
+          <Property Name="TeacherID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TeacherSubjectStudent">
+          <Key>
+            <PropertyRef Name="TeacherID" />
+            <PropertyRef Name="StudentID" />
+            <PropertyRef Name="SubjectID" />
+          </Key>
+          <Property Name="TeacherID" Type="int" Nullable="false" />
+          <Property Name="StudentID" Type="int" Nullable="false" />
+          <Property Name="SubjectID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UpdatedAt" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UserType" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Years">
+          <Key>
+            <PropertyRef Name="YearID" />
+          </Key>
+          <Property Name="YearID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="YearDateStart" Type="date" Nullable="false" />
+          <Property Name="YearDateEnd" Type="date" Nullable="false" />
+          <Property Name="HireDate" Type="date" Nullable="false" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="SchoolID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Classes_Stages_StageID">
+          <End Role="Stages" Type="Self.Stages" Multiplicity="1" />
+          <End Role="Classes" Type="Self.Classes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stages">
+              <PropertyRef Name="StageID" />
+            </Principal>
+            <Dependent Role="Classes">
+              <PropertyRef Name="StageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Divisions_Classes_ClassID">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="1" />
+          <End Role="Divisions" Type="Self.Divisions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="Divisions">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grades_MONTHS">
+          <End Role="MONTHS" Type="Self.MONTHS" Multiplicity="1" />
+          <End Role="Grades" Type="Self.Grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONTHS">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Grades">
+              <PropertyRef Name="month_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grades_Students">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="Grades" Type="Self.Grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="Grades">
+              <PropertyRef Name="studentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grades_subjects">
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="1" />
+          <End Role="Grades" Type="Self.Grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="Grades">
+              <PropertyRef Name="subject_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grades_users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Grades" Type="Self.Grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Grades">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Guardians_Users_UserID">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Guardians" Type="Self.Guardians" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Guardians">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Managers_Schools_SchoolID">
+          <End Role="Schools" Type="Self.Schools" Multiplicity="1" />
+          <End Role="Managers" Type="Self.Managers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schools">
+              <PropertyRef Name="SchoolID" />
+            </Principal>
+            <Dependent Role="Managers">
+              <PropertyRef Name="SchoolID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Managers_Users_UserID">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Managers" Type="Self.Managers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Managers">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MONTHS_users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="MONTHS" Type="Self.MONTHS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="MONTHS">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MONTHS_yera">
+          <End Role="Years" Type="Self.Years" Multiplicity="1" />
+          <End Role="MONTHS" Type="Self.MONTHS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Years">
+              <PropertyRef Name="YearID" />
+            </Principal>
+            <Dependent Role="MONTHS">
+              <PropertyRef Name="YearID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salarys_Teachers_TeacherID">
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="1" />
+          <End Role="Salarys" Type="Self.Salarys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="TeacherID" />
+            </Principal>
+            <Dependent Role="Salarys">
+              <PropertyRef Name="TeacherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Stages_Years_YearID">
+          <End Role="Years" Type="Self.Years" Multiplicity="1" />
+          <End Role="Stages" Type="Self.Stages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Years">
+              <PropertyRef Name="YearID" />
+            </Principal>
+            <Dependent Role="Stages">
+              <PropertyRef Name="YearID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentClass_Classes_ClassID">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="1" />
+          <End Role="StudentClass" Type="Self.StudentClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="StudentClass">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StudentClass_Students_StudentID">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="StudentClass" Type="Self.StudentClass" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="StudentClass">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_Divisions_DivisionID">
+          <End Role="Divisions" Type="Self.Divisions" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Divisions">
+              <PropertyRef Name="DivisionID" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="DivisionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_Guardians_GuardianID">
+          <End Role="Guardians" Type="Self.Guardians" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guardians">
+              <PropertyRef Name="GuardianID" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="GuardianID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_Users_UserID">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subjects_Classes_ClassID">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="1" />
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="Subjects">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubjectStudents_Students_StudentID">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="SubjectStudents" Type="Self.SubjectStudents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="SubjectStudents">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubjectStudents_Subjects_SubjectID">
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="1" />
+          <End Role="SubjectStudents" Type="Self.SubjectStudents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="SubjectStudents">
+              <PropertyRef Name="SubjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teachers_Users_UserID">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Teachers">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherStudents_Students_StudentID">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="TeacherStudents" Type="Self.TeacherStudents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="TeacherStudents">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherStudents_Teachers_TeacherID">
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="1" />
+          <End Role="TeacherStudents" Type="Self.TeacherStudents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="TeacherID" />
+            </Principal>
+            <Dependent Role="TeacherStudents">
+              <PropertyRef Name="TeacherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherSubjectStudent_Students_StudentID">
+          <End Role="Students" Type="Self.Students" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TeacherSubjectStudent" Type="Self.TeacherSubjectStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="TeacherSubjectStudent">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherSubjectStudent_Subjects_SubjectID">
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TeacherSubjectStudent" Type="Self.TeacherSubjectStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="TeacherSubjectStudent">
+              <PropertyRef Name="SubjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherSubjectStudent_Teachers_TeacherID">
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TeacherSubjectStudent" Type="Self.TeacherSubjectStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="TeacherID" />
+            </Principal>
+            <Dependent Role="TeacherSubjectStudent">
+              <PropertyRef Name="TeacherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Years_Schools_SchoolID">
+          <End Role="Schools" Type="Self.Schools" Multiplicity="1" />
+          <End Role="Years" Type="Self.Years" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schools">
+              <PropertyRef Name="SchoolID" />
+            </Principal>
+            <Dependent Role="Years">
+              <PropertyRef Name="SchoolID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SchoolDBModelStoreContainer">
+          <EntitySet Name="__EFMigrationsHistory" EntityType="Self.__EFMigrationsHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Classes" EntityType="Self.Classes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Divisions" EntityType="Self.Divisions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Grades" EntityType="Self.Grades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Guardians" EntityType="Self.Guardians" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Managers" EntityType="Self.Managers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MONTHS" EntityType="Self.MONTHS" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Salarys" EntityType="Self.Salarys" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Schools" EntityType="Self.Schools" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stage" EntityType="Self.Stage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stages" EntityType="Self.Stages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentClass" EntityType="Self.StudentClass" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubjectStudents" EntityType="Self.SubjectStudents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Teachers" EntityType="Self.Teachers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeacherStudents" EntityType="Self.TeacherStudents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TeacherSubjectStudent" EntityType="Self.TeacherSubjectStudent" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Years" EntityType="Self.Years" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Classes_Stages_StageID" Association="Self.FK_Classes_Stages_StageID">
+            <End Role="Stages" EntitySet="Stages" />
+            <End Role="Classes" EntitySet="Classes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Divisions_Classes_ClassID" Association="Self.FK_Divisions_Classes_ClassID">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Divisions" EntitySet="Divisions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grades_MONTHS" Association="Self.FK_Grades_MONTHS">
+            <End Role="MONTHS" EntitySet="MONTHS" />
+            <End Role="Grades" EntitySet="Grades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grades_Students" Association="Self.FK_Grades_Students">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Grades" EntitySet="Grades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grades_subjects" Association="Self.FK_Grades_subjects">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="Grades" EntitySet="Grades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grades_users" Association="Self.FK_Grades_users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Grades" EntitySet="Grades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Guardians_Users_UserID" Association="Self.FK_Guardians_Users_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Guardians" EntitySet="Guardians" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Managers_Schools_SchoolID" Association="Self.FK_Managers_Schools_SchoolID">
+            <End Role="Schools" EntitySet="Schools" />
+            <End Role="Managers" EntitySet="Managers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Managers_Users_UserID" Association="Self.FK_Managers_Users_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Managers" EntitySet="Managers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MONTHS_users" Association="Self.FK_MONTHS_users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="MONTHS" EntitySet="MONTHS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MONTHS_yera" Association="Self.FK_MONTHS_yera">
+            <End Role="Years" EntitySet="Years" />
+            <End Role="MONTHS" EntitySet="MONTHS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salarys_Teachers_TeacherID" Association="Self.FK_Salarys_Teachers_TeacherID">
+            <End Role="Teachers" EntitySet="Teachers" />
+            <End Role="Salarys" EntitySet="Salarys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Stages_Years_YearID" Association="Self.FK_Stages_Years_YearID">
+            <End Role="Years" EntitySet="Years" />
+            <End Role="Stages" EntitySet="Stages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentClass_Classes_ClassID" Association="Self.FK_StudentClass_Classes_ClassID">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="StudentClass" EntitySet="StudentClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StudentClass_Students_StudentID" Association="Self.FK_StudentClass_Students_StudentID">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="StudentClass" EntitySet="StudentClass" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_Divisions_DivisionID" Association="Self.FK_Students_Divisions_DivisionID">
+            <End Role="Divisions" EntitySet="Divisions" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_Guardians_GuardianID" Association="Self.FK_Students_Guardians_GuardianID">
+            <End Role="Guardians" EntitySet="Guardians" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_Users_UserID" Association="Self.FK_Students_Users_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subjects_Classes_ClassID" Association="Self.FK_Subjects_Classes_ClassID">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Subjects" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubjectStudents_Students_StudentID" Association="Self.FK_SubjectStudents_Students_StudentID">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="SubjectStudents" EntitySet="SubjectStudents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubjectStudents_Subjects_SubjectID" Association="Self.FK_SubjectStudents_Subjects_SubjectID">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="SubjectStudents" EntitySet="SubjectStudents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teachers_Users_UserID" Association="Self.FK_Teachers_Users_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Teachers" EntitySet="Teachers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherStudents_Students_StudentID" Association="Self.FK_TeacherStudents_Students_StudentID">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="TeacherStudents" EntitySet="TeacherStudents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherStudents_Teachers_TeacherID" Association="Self.FK_TeacherStudents_Teachers_TeacherID">
+            <End Role="Teachers" EntitySet="Teachers" />
+            <End Role="TeacherStudents" EntitySet="TeacherStudents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherSubjectStudent_Students_StudentID" Association="Self.FK_TeacherSubjectStudent_Students_StudentID">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="TeacherSubjectStudent" EntitySet="TeacherSubjectStudent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherSubjectStudent_Subjects_SubjectID" Association="Self.FK_TeacherSubjectStudent_Subjects_SubjectID">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="TeacherSubjectStudent" EntitySet="TeacherSubjectStudent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherSubjectStudent_Teachers_TeacherID" Association="Self.FK_TeacherSubjectStudent_Teachers_TeacherID">
+            <End Role="Teachers" EntitySet="Teachers" />
+            <End Role="TeacherSubjectStudent" EntitySet="TeacherSubjectStudent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Years_Schools_SchoolID" Association="Self.FK_Years_Schools_SchoolID">
+            <End Role="Schools" EntitySet="Schools" />
+            <End Role="Years" EntitySet="Years" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SchoolDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="C__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Classes">
+          <Key>
+            <PropertyRef Name="ClassID" />
+          </Key>
+          <Property Name="ClassID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClassName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClassYear" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StageID" Type="Int32" Nullable="false" />
+          <Property Name="IsActive" Type="Int32" />
+          <NavigationProperty Name="Stages" Relationship="Self.FK_Classes_Stages_StageID" FromRole="Classes" ToRole="Stages" />
+          <NavigationProperty Name="Divisions" Relationship="Self.FK_Divisions_Classes_ClassID" FromRole="Classes" ToRole="Divisions" />
+          <NavigationProperty Name="Subjects" Relationship="Self.FK_Subjects_Classes_ClassID" FromRole="Classes" ToRole="Subjects" />
+          <NavigationProperty Name="Students" Relationship="Self.StudentClass" FromRole="Classes" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="Divisions">
+          <Key>
+            <PropertyRef Name="DivisionID" />
+          </Key>
+          <Property Name="DivisionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DivisionName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClassID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classes" Relationship="Self.FK_Divisions_Classes_ClassID" FromRole="Divisions" ToRole="Classes" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_Students_Divisions_DivisionID" FromRole="Divisions" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="Guardians">
+          <Key>
+            <PropertyRef Name="GuardianID" />
+          </Key>
+          <Property Name="GuardianID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName_FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName_SecondName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName_ThirdName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName_LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Job" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TypeGuardian" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Guardians_Users_UserID" FromRole="Guardians" ToRole="Users" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_Students_Guardians_GuardianID" FromRole="Guardians" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="Managers">
+          <Key>
+            <PropertyRef Name="ManagerID" />
+          </Key>
+          <Property Name="ManagerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName_FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName_SecondName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName_ThirdName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName_LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="SchoolID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Schools" Relationship="Self.FK_Managers_Schools_SchoolID" FromRole="Managers" ToRole="Schools" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Managers_Users_UserID" FromRole="Managers" ToRole="Users" />
+          <NavigationProperty Name="Teachers" Relationship="Self.FK_Teachers_Managers_ManagerID" FromRole="Managers" ToRole="Teachers" />
+        </EntityType>
+        <EntityType Name="Salarys">
+          <Key>
+            <PropertyRef Name="SalaryID" />
+          </Key>
+          <Property Name="SalaryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SalaryMonth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SalaryHireDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SalaryAmount" Type="Int32" Nullable="false" />
+          <Property Name="TeacherID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Teachers" Relationship="Self.FK_Salarys_Teachers_TeacherID" FromRole="Salarys" ToRole="Teachers" />
+        </EntityType>
+        <EntityType Name="Schools">
+          <Key>
+            <PropertyRef Name="SchoolID" />
+          </Key>
+          <Property Name="SchoolID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SchoolName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SchoolNameEn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="School_Crea_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="SchoolVison" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SchoolMission" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SchoolGoal" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SchoolPhone" Type="Int32" Nullable="false" />
+          <Property Name="Street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SchoolType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="fax" Type="Int32" />
+          <Property Name="zone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Managers" Relationship="Self.FK_Managers_Schools_SchoolID" FromRole="Schools" ToRole="Managers" />
+          <NavigationProperty Name="Years" Relationship="Self.FK_Years_Schools_SchoolID" FromRole="Schools" ToRole="Years" />
+        </EntityType>
+        <EntityType Name="Stage">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" Type="Int32" />
+          <Property Name="StageName" MaxLength="255" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="Note" MaxLength="Max" FixedLength="false" Unicode="true" Type="String" />
+          <Property Name="active" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Stages">
+          <Key>
+            <PropertyRef Name="StageID" />
+          </Key>
+          <Property Name="StageID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StageName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="HireDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="YearID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classes" Relationship="Self.FK_Classes_Stages_StageID" FromRole="Stages" ToRole="Classes" />
+          <NavigationProperty Name="Years" Relationship="Self.FK_Stages_Years_YearID" FromRole="Stages" ToRole="Years" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="StudentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName_FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName_SecondName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName_ThirdName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName_LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GuardianID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="DivisionID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Divisions" Relationship="Self.FK_Students_Divisions_DivisionID" FromRole="Students" ToRole="Divisions" />
+          <NavigationProperty Name="Guardians" Relationship="Self.FK_Students_Guardians_GuardianID" FromRole="Students" ToRole="Guardians" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Students_Users_UserID" FromRole="Students" ToRole="Users" />
+          <NavigationProperty Name="SubjectStudents" Relationship="Self.FK_SubjectStudents_Students_StudentID" FromRole="Students" ToRole="SubjectStudents" />
+          <NavigationProperty Name="TeacherSubjectStudent" Relationship="Self.FK_TeacherSubjectStudent_Students_StudentID" FromRole="Students" ToRole="TeacherSubjectStudent" />
+          <NavigationProperty Name="Classes" Relationship="Self.StudentClass" FromRole="Students" ToRole="Classes" />
+          <NavigationProperty Name="Teachers" Relationship="Self.TeacherStudents" FromRole="Students" ToRole="Teachers" />
+          <Property Name="URLImage" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PayMent" Type="Int32" />
+          <Property Name="PlaceOFBirth" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Grades" Relationship="SchoolDBModel.FK_Grades_Students" FromRole="Students" ToRole="Grades" />
+        </EntityType>
+        <EntityType Name="Subjects">
+          <Key>
+            <PropertyRef Name="SubjectID" />
+          </Key>
+          <Property Name="SubjectID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubjectName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ClassID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classes" Relationship="Self.FK_Subjects_Classes_ClassID" FromRole="Subjects" ToRole="Classes" />
+          <NavigationProperty Name="SubjectStudents" Relationship="Self.FK_SubjectStudents_Subjects_SubjectID" FromRole="Subjects" ToRole="SubjectStudents" />
+          <NavigationProperty Name="TeacherSubjectStudent" Relationship="Self.FK_TeacherSubjectStudent_Subjects_SubjectID" FromRole="Subjects" ToRole="TeacherSubjectStudent" />
+          <NavigationProperty Name="Grades" Relationship="SchoolDBModel.FK_Grades_subjects" FromRole="Subjects" ToRole="Grades" />
+        </EntityType>
+        <EntityType Name="SubjectStudents">
+          <Key>
+            <PropertyRef Name="SubjectID" />
+            <PropertyRef Name="StudentID" />
+          </Key>
+          <Property Name="SubjectID" Type="Int32" Nullable="false" />
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <Property Name="Grade" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_SubjectStudents_Students_StudentID" FromRole="SubjectStudents" ToRole="Students" />
+          <NavigationProperty Name="Subjects" Relationship="Self.FK_SubjectStudents_Subjects_SubjectID" FromRole="SubjectStudents" ToRole="Subjects" />
+        </EntityType>
+        <EntityType Name="Teachers">
+          <Key>
+            <PropertyRef Name="TeacherID" />
+          </Key>
+          <Property Name="TeacherID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName_FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName_SecondName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName_ThirdName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullName_LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PhoneNum" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="HireDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ManagerID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Managers" Relationship="Self.FK_Teachers_Managers_ManagerID" FromRole="Teachers" ToRole="Managers" />
+          <NavigationProperty Name="Salarys" Relationship="Self.FK_Salarys_Teachers_TeacherID" FromRole="Teachers" ToRole="Salarys" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Teachers_Users_UserID" FromRole="Teachers" ToRole="Users" />
+          <NavigationProperty Name="TeacherSubjectStudent" Relationship="Self.FK_TeacherSubjectStudent_Teachers_TeacherID" FromRole="Teachers" ToRole="TeacherSubjectStudent" />
+          <NavigationProperty Name="Students" Relationship="Self.TeacherStudents" FromRole="Teachers" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="TeacherSubjectStudent">
+          <Key>
+            <PropertyRef Name="TeacherID" />
+            <PropertyRef Name="StudentID" />
+            <PropertyRef Name="SubjectID" />
+          </Key>
+          <Property Name="TeacherID" Type="Int32" Nullable="false" />
+          <Property Name="StudentID" Type="Int32" Nullable="false" />
+          <Property Name="SubjectID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_TeacherSubjectStudent_Students_StudentID" FromRole="TeacherSubjectStudent" ToRole="Students" />
+          <NavigationProperty Name="Subjects" Relationship="Self.FK_TeacherSubjectStudent_Subjects_SubjectID" FromRole="TeacherSubjectStudent" ToRole="Subjects" />
+          <NavigationProperty Name="Teachers" Relationship="Self.FK_TeacherSubjectStudent_Teachers_TeacherID" FromRole="TeacherSubjectStudent" ToRole="Teachers" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UpdatedAt" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UserType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Guardians" Relationship="Self.FK_Guardians_Users_UserID" FromRole="Users" ToRole="Guardians" />
+          <NavigationProperty Name="Managers" Relationship="Self.FK_Managers_Users_UserID" FromRole="Users" ToRole="Managers" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_Students_Users_UserID" FromRole="Users" ToRole="Students" />
+          <NavigationProperty Name="Teachers" Relationship="Self.FK_Teachers_Users_UserID" FromRole="Users" ToRole="Teachers" />
+          <NavigationProperty Name="Grades" Relationship="SchoolDBModel.FK_Grades_users" FromRole="Users" ToRole="Grades" />
+          <NavigationProperty Name="MONTHS" Relationship="SchoolDBModel.FK_MONTHS_users" FromRole="Users" ToRole="MONTH" />
+        </EntityType>
+        <EntityType Name="Years">
+          <Key>
+            <PropertyRef Name="YearID" />
+          </Key>
+          <Property Name="YearID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="YearDateStart" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="YearDateEnd" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="HireDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="SchoolID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Schools" Relationship="Self.FK_Years_Schools_SchoolID" FromRole="Years" ToRole="Schools" />
+          <NavigationProperty Name="Stages" Relationship="Self.FK_Stages_Years_YearID" FromRole="Years" ToRole="Stages" />
+          <NavigationProperty Name="MONTHS" Relationship="SchoolDBModel.FK_MONTHS_yera" FromRole="Years" ToRole="MONTH" />
+        </EntityType>
+        <Association Name="FK_Classes_Stages_StageID">
+          <End Role="Stages" Type="Self.Stages" Multiplicity="1" />
+          <End Role="Classes" Type="Self.Classes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Stages">
+              <PropertyRef Name="StageID" />
+            </Principal>
+            <Dependent Role="Classes">
+              <PropertyRef Name="StageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Divisions_Classes_ClassID">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="1" />
+          <End Role="Divisions" Type="Self.Divisions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="Divisions">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subjects_Classes_ClassID">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="1" />
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes">
+              <PropertyRef Name="ClassID" />
+            </Principal>
+            <Dependent Role="Subjects">
+              <PropertyRef Name="ClassID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_Divisions_DivisionID">
+          <End Role="Divisions" Type="Self.Divisions" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Divisions">
+              <PropertyRef Name="DivisionID" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="DivisionID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Guardians_Users_UserID">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Guardians" Type="Self.Guardians" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Guardians">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_Guardians_GuardianID">
+          <End Role="Guardians" Type="Self.Guardians" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guardians">
+              <PropertyRef Name="GuardianID" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="GuardianID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Managers_Schools_SchoolID">
+          <End Role="Schools" Type="Self.Schools" Multiplicity="1" />
+          <End Role="Managers" Type="Self.Managers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schools">
+              <PropertyRef Name="SchoolID" />
+            </Principal>
+            <Dependent Role="Managers">
+              <PropertyRef Name="SchoolID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Managers_Users_UserID">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Managers" Type="Self.Managers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Managers">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teachers_Managers_ManagerID">
+          <End Role="Managers" Type="Self.Managers" Multiplicity="1" />
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Managers">
+              <PropertyRef Name="ManagerID" />
+            </Principal>
+            <Dependent Role="Teachers">
+              <PropertyRef Name="ManagerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Salarys_Teachers_TeacherID">
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="1" />
+          <End Role="Salarys" Type="Self.Salarys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="TeacherID" />
+            </Principal>
+            <Dependent Role="Salarys">
+              <PropertyRef Name="TeacherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Years_Schools_SchoolID">
+          <End Role="Schools" Type="Self.Schools" Multiplicity="1" />
+          <End Role="Years" Type="Self.Years" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Schools">
+              <PropertyRef Name="SchoolID" />
+            </Principal>
+            <Dependent Role="Years">
+              <PropertyRef Name="SchoolID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Stages_Years_YearID">
+          <End Role="Years" Type="Self.Years" Multiplicity="1" />
+          <End Role="Stages" Type="Self.Stages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Years">
+              <PropertyRef Name="YearID" />
+            </Principal>
+            <Dependent Role="Stages">
+              <PropertyRef Name="YearID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Students_Users_UserID">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubjectStudents_Students_StudentID">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="SubjectStudents" Type="Self.SubjectStudents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="SubjectStudents">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherSubjectStudent_Students_StudentID">
+          <End Role="Students" Type="Self.Students" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TeacherSubjectStudent" Type="Self.TeacherSubjectStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="TeacherSubjectStudent">
+              <PropertyRef Name="StudentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubjectStudents_Subjects_SubjectID">
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="1" />
+          <End Role="SubjectStudents" Type="Self.SubjectStudents" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="SubjectStudents">
+              <PropertyRef Name="SubjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherSubjectStudent_Subjects_SubjectID">
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TeacherSubjectStudent" Type="Self.TeacherSubjectStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="TeacherSubjectStudent">
+              <PropertyRef Name="SubjectID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Teachers_Users_UserID">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Teachers">
+              <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TeacherSubjectStudent_Teachers_TeacherID">
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TeacherSubjectStudent" Type="Self.TeacherSubjectStudent" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Teachers">
+              <PropertyRef Name="TeacherID" />
+            </Principal>
+            <Dependent Role="TeacherSubjectStudent">
+              <PropertyRef Name="TeacherID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="StudentClass">
+          <End Role="Classes" Type="Self.Classes" Multiplicity="*" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+        </Association>
+        <Association Name="TeacherStudents">
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <End Role="Teachers" Type="Self.Teachers" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="SchoolDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="C__EFMigrationsHistory" EntityType="Self.C__EFMigrationsHistory" />
+          <EntitySet Name="Classes" EntityType="Self.Classes" />
+          <EntitySet Name="Divisions" EntityType="Self.Divisions" />
+          <EntitySet Name="Guardians" EntityType="Self.Guardians" />
+          <EntitySet Name="Managers" EntityType="Self.Managers" />
+          <EntitySet Name="Salarys" EntityType="Self.Salarys" />
+          <EntitySet Name="Schools" EntityType="Self.Schools" />
+          <EntitySet Name="Stage" EntityType="Self.Stage" />
+          <EntitySet Name="Stages" EntityType="Self.Stages" />
+          <EntitySet Name="Students" EntityType="Self.Students" />
+          <EntitySet Name="Subjects" EntityType="Self.Subjects" />
+          <EntitySet Name="SubjectStudents" EntityType="Self.SubjectStudents" />
+          <EntitySet Name="Teachers" EntityType="Self.Teachers" />
+          <EntitySet Name="TeacherSubjectStudent" EntityType="Self.TeacherSubjectStudent" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="Years" EntityType="Self.Years" />
+          <AssociationSet Name="FK_Classes_Stages_StageID" Association="Self.FK_Classes_Stages_StageID">
+            <End Role="Stages" EntitySet="Stages" />
+            <End Role="Classes" EntitySet="Classes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Divisions_Classes_ClassID" Association="Self.FK_Divisions_Classes_ClassID">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Divisions" EntitySet="Divisions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subjects_Classes_ClassID" Association="Self.FK_Subjects_Classes_ClassID">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Subjects" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_Divisions_DivisionID" Association="Self.FK_Students_Divisions_DivisionID">
+            <End Role="Divisions" EntitySet="Divisions" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Guardians_Users_UserID" Association="Self.FK_Guardians_Users_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Guardians" EntitySet="Guardians" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_Guardians_GuardianID" Association="Self.FK_Students_Guardians_GuardianID">
+            <End Role="Guardians" EntitySet="Guardians" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Managers_Schools_SchoolID" Association="Self.FK_Managers_Schools_SchoolID">
+            <End Role="Schools" EntitySet="Schools" />
+            <End Role="Managers" EntitySet="Managers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Managers_Users_UserID" Association="Self.FK_Managers_Users_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Managers" EntitySet="Managers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teachers_Managers_ManagerID" Association="Self.FK_Teachers_Managers_ManagerID">
+            <End Role="Managers" EntitySet="Managers" />
+            <End Role="Teachers" EntitySet="Teachers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Salarys_Teachers_TeacherID" Association="Self.FK_Salarys_Teachers_TeacherID">
+            <End Role="Teachers" EntitySet="Teachers" />
+            <End Role="Salarys" EntitySet="Salarys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Years_Schools_SchoolID" Association="Self.FK_Years_Schools_SchoolID">
+            <End Role="Schools" EntitySet="Schools" />
+            <End Role="Years" EntitySet="Years" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Stages_Years_YearID" Association="Self.FK_Stages_Years_YearID">
+            <End Role="Years" EntitySet="Years" />
+            <End Role="Stages" EntitySet="Stages" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Students_Users_UserID" Association="Self.FK_Students_Users_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubjectStudents_Students_StudentID" Association="Self.FK_SubjectStudents_Students_StudentID">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="SubjectStudents" EntitySet="SubjectStudents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherSubjectStudent_Students_StudentID" Association="Self.FK_TeacherSubjectStudent_Students_StudentID">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="TeacherSubjectStudent" EntitySet="TeacherSubjectStudent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubjectStudents_Subjects_SubjectID" Association="Self.FK_SubjectStudents_Subjects_SubjectID">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="SubjectStudents" EntitySet="SubjectStudents" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherSubjectStudent_Subjects_SubjectID" Association="Self.FK_TeacherSubjectStudent_Subjects_SubjectID">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="TeacherSubjectStudent" EntitySet="TeacherSubjectStudent" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Teachers_Users_UserID" Association="Self.FK_Teachers_Users_UserID">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Teachers" EntitySet="Teachers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TeacherSubjectStudent_Teachers_TeacherID" Association="Self.FK_TeacherSubjectStudent_Teachers_TeacherID">
+            <End Role="Teachers" EntitySet="Teachers" />
+            <End Role="TeacherSubjectStudent" EntitySet="TeacherSubjectStudent" />
+          </AssociationSet>
+          <AssociationSet Name="StudentClass" Association="Self.StudentClass">
+            <End Role="Classes" EntitySet="Classes" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="TeacherStudents" Association="Self.TeacherStudents">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Teachers" EntitySet="Teachers" />
+          </AssociationSet>
+          <EntitySet Name="Grades" EntityType="SchoolDBModel.Grades" />
+          <AssociationSet Name="FK_Grades_Students" Association="SchoolDBModel.FK_Grades_Students">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Grades" EntitySet="Grades" />
+          </AssociationSet>
+          <EntitySet Name="MONTHS" EntityType="SchoolDBModel.MONTH" />
+          <AssociationSet Name="FK_Grades_MONTHS" Association="SchoolDBModel.FK_Grades_MONTHS">
+            <End Role="MONTH" EntitySet="MONTHS" />
+            <End Role="Grades" EntitySet="Grades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grades_subjects" Association="SchoolDBModel.FK_Grades_subjects">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="Grades" EntitySet="Grades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Grades_users" Association="SchoolDBModel.FK_Grades_users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Grades" EntitySet="Grades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MONTHS_users" Association="SchoolDBModel.FK_MONTHS_users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="MONTH" EntitySet="MONTHS" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MONTHS_yera" Association="SchoolDBModel.FK_MONTHS_yera">
+            <End Role="Years" EntitySet="Years" />
+            <End Role="MONTH" EntitySet="MONTHS" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Grades">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="studentID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="SchoolDBModel.FK_Grades_Students" FromRole="Grades" ToRole="Students" />
+          <Property Name="testing_value" Type="Int32" Nullable="false" />
+          <Property Name="share_value" Type="Int32" Nullable="false" />
+          <Property Name="atendance_value" Type="Int32" Nullable="false" />
+          <Property Name="shafahi_value" Type="Int32" Nullable="false" />
+          <Property Name="homework_value" Type="Int32" Nullable="false" />
+          <Property Name="subject_id" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="month_id" Type="Int32" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="MONTH" Relationship="SchoolDBModel.FK_Grades_MONTHS" FromRole="Grades" ToRole="MONTH" />
+          <NavigationProperty Name="Subject" Relationship="SchoolDBModel.FK_Grades_subjects" FromRole="Grades" ToRole="Subjects" />
+          <NavigationProperty Name="User" Relationship="SchoolDBModel.FK_Grades_users" FromRole="Grades" ToRole="Users" />
+        </EntityType>
+        <Association Name="FK_Grades_Students">
+          <End Type="SchoolDBModel.Students" Role="Students" Multiplicity="1" />
+          <End Type="SchoolDBModel.Grades" Role="Grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="StudentID" />
+            </Principal>
+            <Dependent Role="Grades">
+              <PropertyRef Name="studentID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MONTH">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="value" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+          <Property Name="YearID" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="note" Type="String" MaxLength="200" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Grades" Relationship="SchoolDBModel.FK_Grades_MONTHS" FromRole="MONTH" ToRole="Grades" />
+          <NavigationProperty Name="User" Relationship="SchoolDBModel.FK_MONTHS_users" FromRole="MONTH" ToRole="Users" />
+          <NavigationProperty Name="Year" Relationship="SchoolDBModel.FK_MONTHS_yera" FromRole="MONTH" ToRole="Years" />
+        </EntityType>
+        <Association Name="FK_Grades_MONTHS">
+          <End Type="SchoolDBModel.MONTH" Role="MONTH" Multiplicity="1" />
+          <End Type="SchoolDBModel.Grades" Role="Grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MONTH">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Grades">
+              <PropertyRef Name="month_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grades_subjects">
+          <End Type="SchoolDBModel.Subjects" Role="Subjects" Multiplicity="1" />
+          <End Type="SchoolDBModel.Grades" Role="Grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="SubjectID" />
+            </Principal>
+            <Dependent Role="Grades">
+              <PropertyRef Name="subject_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Grades_users">
+          <End Type="SchoolDBModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="SchoolDBModel.Grades" Role="Grades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="Grades">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MONTHS_users">
+          <End Type="SchoolDBModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="SchoolDBModel.MONTH" Role="MONTH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="MONTH">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MONTHS_yera">
+          <End Type="SchoolDBModel.Years" Role="Years" Multiplicity="1" />
+          <End Type="SchoolDBModel.MONTH" Role="MONTH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Years">
+              <PropertyRef Name="YearID" />
+            </Principal>
+            <Dependent Role="MONTH">
+              <PropertyRef Name="YearID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SchoolDBModelStoreContainer" CdmEntityContainer="SchoolDBEntities">
+          <EntitySetMapping Name="C__EFMigrationsHistory">
+            <EntityTypeMapping TypeName="SchoolDBModel.C__EFMigrationsHistory">
+              <MappingFragment StoreEntitySet="__EFMigrationsHistory">
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classes">
+            <EntityTypeMapping TypeName="SchoolDBModel.Classes">
+              <MappingFragment StoreEntitySet="Classes">
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+                <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+                <ScalarProperty Name="ClassYear" ColumnName="ClassYear" />
+                <ScalarProperty Name="StageID" ColumnName="StageID" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Divisions">
+            <EntityTypeMapping TypeName="SchoolDBModel.Divisions">
+              <MappingFragment StoreEntitySet="Divisions">
+                <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+                <ScalarProperty Name="DivisionName" ColumnName="DivisionName" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Guardians">
+            <EntityTypeMapping TypeName="SchoolDBModel.Guardians">
+              <MappingFragment StoreEntitySet="Guardians">
+                <ScalarProperty Name="GuardianID" ColumnName="GuardianID" />
+                <ScalarProperty Name="FullName_FirstName" ColumnName="FullName_FirstName" />
+                <ScalarProperty Name="FullName_SecondName" ColumnName="FullName_SecondName" />
+                <ScalarProperty Name="FullName_ThirdName" ColumnName="FullName_ThirdName" />
+                <ScalarProperty Name="FullName_LastName" ColumnName="FullName_LastName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="TypeGuardian" ColumnName="TypeGuardian" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Managers">
+            <EntityTypeMapping TypeName="SchoolDBModel.Managers">
+              <MappingFragment StoreEntitySet="Managers">
+                <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+                <ScalarProperty Name="FullName_FirstName" ColumnName="FullName_FirstName" />
+                <ScalarProperty Name="FullName_SecondName" ColumnName="FullName_SecondName" />
+                <ScalarProperty Name="FullName_ThirdName" ColumnName="FullName_ThirdName" />
+                <ScalarProperty Name="FullName_LastName" ColumnName="FullName_LastName" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salarys">
+            <EntityTypeMapping TypeName="SchoolDBModel.Salarys">
+              <MappingFragment StoreEntitySet="Salarys">
+                <ScalarProperty Name="SalaryID" ColumnName="SalaryID" />
+                <ScalarProperty Name="SalaryMonth" ColumnName="SalaryMonth" />
+                <ScalarProperty Name="SalaryHireDate" ColumnName="SalaryHireDate" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="SalaryAmount" ColumnName="SalaryAmount" />
+                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schools">
+            <EntityTypeMapping TypeName="SchoolDBModel.Schools">
+              <MappingFragment StoreEntitySet="Schools">
+                <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+                <ScalarProperty Name="SchoolName" ColumnName="SchoolName" />
+                <ScalarProperty Name="SchoolNameEn" ColumnName="SchoolNameEn" />
+                <ScalarProperty Name="School_Crea_Date" ColumnName="School_Crea_Date" />
+                <ScalarProperty Name="SchoolVison" ColumnName="SchoolVison" />
+                <ScalarProperty Name="SchoolMission" ColumnName="SchoolMission" />
+                <ScalarProperty Name="SchoolGoal" ColumnName="SchoolGoal" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="SchoolPhone" ColumnName="SchoolPhone" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="SchoolType" ColumnName="SchoolType" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="zone" ColumnName="zone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stage">
+            <EntityTypeMapping TypeName="SchoolDBModel.Stage">
+              <MappingFragment StoreEntitySet="Stage">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="StageName" ColumnName="StageName" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="active" ColumnName="active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stages">
+            <EntityTypeMapping TypeName="SchoolDBModel.Stages">
+              <MappingFragment StoreEntitySet="Stages">
+                <ScalarProperty Name="StageID" ColumnName="StageID" />
+                <ScalarProperty Name="StageName" ColumnName="StageName" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="YearID" ColumnName="YearID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="SchoolDBModel.Students">
+              <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="PlaceOFBirth" ColumnName="PlaceOFBirth" />
+                <ScalarProperty Name="PayMent" ColumnName="PayMent" />
+                <ScalarProperty Name="URLImage" ColumnName="URLImage" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="FullName_FirstName" ColumnName="FullName_FirstName" />
+                <ScalarProperty Name="FullName_SecondName" ColumnName="FullName_SecondName" />
+                <ScalarProperty Name="FullName_ThirdName" ColumnName="FullName_ThirdName" />
+                <ScalarProperty Name="FullName_LastName" ColumnName="FullName_LastName" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="GuardianID" ColumnName="GuardianID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="DivisionID" ColumnName="DivisionID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subjects">
+            <EntityTypeMapping TypeName="SchoolDBModel.Subjects">
+              <MappingFragment StoreEntitySet="Subjects">
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+                <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubjectStudents">
+            <EntityTypeMapping TypeName="SchoolDBModel.SubjectStudents">
+              <MappingFragment StoreEntitySet="SubjectStudents">
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="Grade" ColumnName="Grade" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Teachers">
+            <EntityTypeMapping TypeName="SchoolDBModel.Teachers">
+              <MappingFragment StoreEntitySet="Teachers">
+                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+                <ScalarProperty Name="FullName_FirstName" ColumnName="FullName_FirstName" />
+                <ScalarProperty Name="FullName_SecondName" ColumnName="FullName_SecondName" />
+                <ScalarProperty Name="FullName_ThirdName" ColumnName="FullName_ThirdName" />
+                <ScalarProperty Name="FullName_LastName" ColumnName="FullName_LastName" />
+                <ScalarProperty Name="PhoneNum" ColumnName="PhoneNum" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TeacherSubjectStudent">
+            <EntityTypeMapping TypeName="SchoolDBModel.TeacherSubjectStudent">
+              <MappingFragment StoreEntitySet="TeacherSubjectStudent">
+                <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+                <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+                <ScalarProperty Name="SubjectID" ColumnName="SubjectID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="SchoolDBModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="CreatedAt" ColumnName="CreatedAt" />
+                <ScalarProperty Name="UpdatedAt" ColumnName="UpdatedAt" />
+                <ScalarProperty Name="UserType" ColumnName="UserType" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Years">
+            <EntityTypeMapping TypeName="SchoolDBModel.Years">
+              <MappingFragment StoreEntitySet="Years">
+                <ScalarProperty Name="YearID" ColumnName="YearID" />
+                <ScalarProperty Name="YearDateStart" ColumnName="YearDateStart" />
+                <ScalarProperty Name="YearDateEnd" ColumnName="YearDateEnd" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="StudentClass" TypeName="SchoolDBModel.StudentClass" StoreEntitySet="StudentClass">
+            <EndProperty Name="Classes">
+              <ScalarProperty Name="ClassID" ColumnName="ClassID" />
+            </EndProperty>
+            <EndProperty Name="Students">
+              <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="TeacherStudents" TypeName="SchoolDBModel.TeacherStudents" StoreEntitySet="TeacherStudents">
+            <EndProperty Name="Students">
+              <ScalarProperty Name="StudentID" ColumnName="StudentID" />
+            </EndProperty>
+            <EndProperty Name="Teachers">
+              <ScalarProperty Name="TeacherID" ColumnName="TeacherID" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="Grades">
+            <EntityTypeMapping TypeName="SchoolDBModel.Grades">
+              <MappingFragment StoreEntitySet="Grades">
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="month_id" ColumnName="month_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+                <ScalarProperty Name="homework_value" ColumnName="homework_value" />
+                <ScalarProperty Name="shafahi_value" ColumnName="shafahi_value" />
+                <ScalarProperty Name="atendance_value" ColumnName="atendance_value" />
+                <ScalarProperty Name="share_value" ColumnName="share_value" />
+                <ScalarProperty Name="testing_value" ColumnName="testing_value" />
+                <ScalarProperty Name="studentID" ColumnName="studentID" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MONTHS">
+            <EntityTypeMapping TypeName="SchoolDBModel.MONTH">
+              <MappingFragment StoreEntitySet="MONTHS">
+                <ScalarProperty Name="note" ColumnName="note" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="YearID" ColumnName="YearID" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,48 @@
+# Ignore Visual Studio temporary files, build results, and
+# folders related to Visual Studio and .NET projects
+.vs/
+bin/
+obj/
+packages/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore directories for temporary and backup files
+**/*_backup/
+**/*_bak/
+**/*_tmp/
+
+# Ignore Node.js dependencies
+node_modules/
+npm-debug.log*
+
+# Ignore compiled code
+*.dll
+*.exe
+*.log
+*.sql
+*.sqlite
+
+# Ignore Angular build results
+dist/
+out-tsc/
+
+# Ignore JetBrains IDEs settings
+.idea/
+*.iml
+
+# Ignore generated files
+*.class
+*.war
+*.jar
+*.pyc
+*.pyo
+*.pdb
+
+# Ignore Project-Disktop-Latest folder
+Project-Disktop-Latest/
+
+# Ignore sensitive files
+.env
