@@ -25,22 +25,25 @@ namespace MySchool.Forms
         {
             string username=guna2TextBox1.Text;
             string password=guna2TextBox2.Text;
+            if (username == ""||password=="")
+            {
+                MessageBox.Show("UserName Or Password is Null","warnning",MessageBoxButtons.OK);
+            }
 
            // var user=db.Users.FirstOrDefaultAsync(u=>u.UserName == username && u.Password==password);
 
             var user = db.Users.FirstOrDefault(u => u.UserName == username && u.Password == password);
-            int usid =user.UserID;
             if (user != null)
             {
-                // Store the UserId after successful login
-                userid = usid;
+
                 // Open the Dashboard form
-              Dashboard dashboard = new Dashboard();
-               dashboard.Show();
-             this.Visible = false;
+                Dashboard dashboard = new Dashboard();
+                dashboard.Show();
+                this.Visible = false;
             }
             else
             {
+                MessageBox.Show("UserName Or Password is not Correct!   Please try again.","error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 guna2TextBox1.Text = "";
                 guna2TextBox2.Text = "";
             }

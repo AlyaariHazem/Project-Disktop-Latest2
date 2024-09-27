@@ -82,6 +82,7 @@ namespace MySchool.userControl
 
         private void btnsave_Click(object sender, EventArgs e)
         {
+            btnsave.Text = "إضافة";
             List<Control> optionalControls = new List<Control> { birthofdate, txtemail,txtsearch,txtfull_name};
 
             if (!tool.ValidateInputs(this, optionalControls))

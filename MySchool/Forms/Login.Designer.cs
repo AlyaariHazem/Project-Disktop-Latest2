@@ -86,7 +86,7 @@
             this.label1.Location = new System.Drawing.Point(387, 157);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 16);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 1;
             this.label1.Text = "الاسم ";
             // 
             // guna2Panel1
@@ -130,7 +130,7 @@
             this.guna2CheckBox1.Name = "guna2CheckBox1";
             this.guna2CheckBox1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.guna2CheckBox1.Size = new System.Drawing.Size(109, 20);
-            this.guna2CheckBox1.TabIndex = 5;
+            this.guna2CheckBox1.TabIndex = 3;
             this.guna2CheckBox1.Text = "إضهار لكمة السر";
             this.guna2CheckBox1.UncheckedState.BorderColor = System.Drawing.Color.White;
             this.guna2CheckBox1.UncheckedState.BorderRadius = 0;
@@ -177,7 +177,7 @@
             this.guna2TextBox2.PlaceholderText = "";
             this.guna2TextBox2.SelectedText = "";
             this.guna2TextBox2.Size = new System.Drawing.Size(229, 35);
-            this.guna2TextBox2.TabIndex = 1;
+            this.guna2TextBox2.TabIndex = 2;
             this.guna2TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Login

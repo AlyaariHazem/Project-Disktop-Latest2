@@ -331,6 +331,7 @@ namespace MySchool.userControl
             if (guna2TileButton2.Text == "تعديل")
             {
                 UpdateStage();
+                guna2TileButton2.Text = "إضافة";
             }
             else
             {
@@ -531,6 +532,7 @@ namespace MySchool.userControl
             if (guna2TileButton3.Text == "تعديل")
             {
                 UpdateClass();
+                guna2TileButton3.Text = "إضافة";
             }
             else
             {
@@ -692,6 +694,7 @@ namespace MySchool.userControl
             if (guna2TileButton1.Text == "تعديل")
             {
                 UpdateDivision();
+                guna2TileButton1.Text = "إضافة";
             }
             else
             {

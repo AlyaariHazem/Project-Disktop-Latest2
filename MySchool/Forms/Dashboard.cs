@@ -51,6 +51,10 @@ namespace MySchool.Forms
             {
                 LoadUserControlSubject();
             }
+            else if (message.ToLower() == "إضافة مادة")
+            {
+                LoadUserControlSubject();
+            }
             else if (message.ToLower() == "التقويم")
             {
                 LoadUserControlReports();
@@ -62,9 +66,14 @@ namespace MySchool.Forms
             else if (message.ToLower() == "شهادة سنوية")
             {
                 LoadUserControlcertificateForYear();
-            }   else if (message.ToLower() == "اضافة الدرجات")
+            }   
+            else if (message.ToLower() == "اضافة الدرجات")
             {
                 LoadUserControlgrades();
+            }
+            else if (message.ToLower() == "إضافة طالب")
+            {
+                LoadUserControlAddStudent();
             }
 
         }
@@ -157,6 +166,16 @@ namespace MySchool.Forms
             userControlgrades.Dock = DockStyle.Fill;
 
             panel1.Controls.Add(userControlgrades);
+        }
+        private void LoadUserControlAddStudent()
+        {
+            panel1.Controls.Clear();
+
+            UserControlAddStudent userControlAddStudent = new UserControlAddStudent();
+
+            userControlAddStudent.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(userControlAddStudent);
         }
 
 
