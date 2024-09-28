@@ -1,0 +1,706 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>itext.pdfua</name>
+    </assembly>
+    <members>
+        <member name="T:iText.Pdfua.Checkers.PdfUA1Checker">
+            <summary>The class defines the requirements of the PDF/UA-1 standard.</summary>
+            <remarks>
+            The class defines the requirements of the PDF/UA-1 standard.
+            <para />
+            The specification implemented by this class is ISO 14289-1
+            </remarks>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.PdfUA1Checker.#ctor(iText.Kernel.Pdf.PdfDocument)">
+            <summary>Creates PdfUA1Checker instance with PDF document which will be validated against PDF/UA-1 standard.
+                </summary>
+            <param name="pdfDocument">the document to validate</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.PdfUA1Checker.ValidateDocument(iText.Kernel.Utils.ValidationContext)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.PdfUA1Checker.ValidateObject(System.Object,iText.Kernel.Pdf.IsoKey,iText.Kernel.Pdf.PdfResources,iText.Kernel.Pdf.PdfStream,System.Object)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.PdfUA1Checker.CheckFileSpec(iText.Kernel.Pdf.PdfDictionary)">
+            <summary>Verify the conformity of the file specification dictionary.</summary>
+            <param name="fileSpec">
+            the
+            <see cref="T:iText.Kernel.Pdf.PdfDictionary"/>
+            containing file specification to be checked
+            </param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.PdfUA1Checker.CheckPdfObject(iText.Kernel.Pdf.PdfObject)">
+            <summary>
+            This method checks the requirements that must be fulfilled by a COS
+            object in a PDF/UA document.
+            </summary>
+            <param name="obj">the COS object that must be checked</param>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.ActionCheckUtil">
+            <summary>Class that provides methods for checking PDF/UA compliance of actions.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.ActionCheckUtil.CheckAction(iText.Kernel.Pdf.PdfDictionary)">
+            <summary>Check PDF/UA compliance of an action</summary>
+            <param name="action">action to check</param>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.AnnotationCheckUtil">
+            <summary>Class that provides methods for checking PDF/UA compliance of annotations.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.AnnotationCheckUtil.IsAnnotationVisible(iText.Kernel.Pdf.PdfDictionary)">
+            <summary>
+            Is annotation visible:
+            <see langword="true"/>
+            if hidden flag isn't
+            set and annotation intersects CropBox (default value is MediaBox).
+            </summary>
+            <param name="annotDict">annotation to check</param>
+            <returns>
+            
+            <see langword="true"/>
+            if annotation should be checked, otherwise
+            <see langword="false"/>
+            </returns>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.AnnotationCheckUtil.AnnotationHandler">
+            <summary>Helper class that checks the conformance of annotations while iterating the tag tree structure.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.AnnotationCheckUtil.AnnotationHandler.#ctor(iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new instance of the
+            <see cref="T:iText.Pdfua.Checkers.Utils.AnnotationCheckUtil.AnnotationHandler"/>.
+            </summary>
+            <param name="context">The validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.AnnotationCheckUtil.AnnotationHandler.NextElement(iText.Kernel.Pdf.Tagging.IStructureNode)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.BCP47Validator">
+            <summary>This class is a validator for IETF BCP 47 language tag (RFC 5646)</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.BCP47Validator.Validate(System.String)">
+            <summary>Validate language tag against RFC 5646.</summary>
+            <param name="languageTag">language tag string</param>
+            <returns>
+            
+            <see langword="true"/>
+            if it is a valid tag,
+            <see langword="false"/>
+            otherwise
+            </returns>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.ContextAwareTagTreeIteratorHandler">
+            <summary>Class that holds the validation context while iterating the tag tree structure.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.ContextAwareTagTreeIteratorHandler.#ctor(iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new instance of the
+            <see cref="T:iText.Pdfua.Checkers.Utils.ContextAwareTagTreeIteratorHandler"/>.
+            </summary>
+            <param name="context">The validation context.</param>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.FormCheckUtil">
+            <summary>Class that provides methods for checking PDF/UA compliance of interactive form fields.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.FormCheckUtil.#ctor">
+            <summary>
+            Creates a new
+            <see cref="T:iText.Pdfua.Checkers.Utils.FormCheckUtil"/>
+            instance.
+            </summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.FormCheckUtil.FormTagHandler">
+            <summary>Handler for checking form field elements in the tag tree.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.FormCheckUtil.FormTagHandler.#ctor(iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new
+            <see cref="!:FormulaTagHandler"/>
+            instance.
+            </summary>
+            <param name="context">The validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.FormCheckUtil.FormTagHandler.NextElement(iText.Kernel.Pdf.Tagging.IStructureNode)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.FormCheckUtil.FormTagHandler.GetInteractiveKidForm(iText.Kernel.Pdf.Tagging.PdfStructElem)">
+            <summary>Gets a widget annotation kid if it exists.</summary>
+            <param name="structElem">Parent structure element.</param>
+            <returns>Kid as PdfDictionary.</returns>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.FormulaCheckUtil">
+            <summary>Class that provides methods for checking PDF/UA compliance of Formula elements.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.FormulaCheckUtil.#ctor">
+            <summary>
+            Creates a new
+            <see cref="T:iText.Pdfua.Checkers.Utils.FormulaCheckUtil"/>
+            instance.
+            </summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.FormulaCheckUtil.FormulaTagHandler">
+            <summary>Handler for checking Formula elements in the TagTree.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.FormulaCheckUtil.FormulaTagHandler.#ctor(iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new
+            <see cref="T:iText.Pdfua.Checkers.Utils.FormulaCheckUtil.FormulaTagHandler"/>
+            instance.
+            </summary>
+            <param name="context">The validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.FormulaCheckUtil.FormulaTagHandler.NextElement(iText.Kernel.Pdf.Tagging.IStructureNode)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.GraphicsCheckUtil">
+            <summary>Class that provides methods for checking PDF/UA compliance of graphics elements.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.GraphicsCheckUtil.#ctor(iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new
+            <see cref="T:iText.Pdfua.Checkers.Utils.GraphicsCheckUtil"/>
+            instance.
+            </summary>
+            <param name="context">The validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.GraphicsCheckUtil.CheckLayoutImage(iText.Layout.Element.Image)">
+            <summary>WARNING! This method is an artifact and currently does nothing.</summary>
+            <remarks>
+            WARNING! This method is an artifact and currently does nothing.
+            It is kept to ensure backward binary compatibility
+            </remarks>
+            <param name="image">image to check</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.GraphicsCheckUtil.CreateFigureTagHandler">
+            <summary>WARNING! This method is an artifact and currently does nothing.</summary>
+            <remarks>
+            WARNING! This method is an artifact and currently does nothing.
+            It is kept to ensure backward binary compatibility
+            </remarks>
+            <returns>
+            
+            <see cref="T:iText.Kernel.Pdf.Tagutils.ITagTreeIteratorHandler"/>
+            always null
+            </returns>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.GraphicsCheckUtil.CheckLayoutElement(iText.Layout.Element.Image)">
+            <summary>Checks if image has alternative description or actual text.</summary>
+            <param name="image">The image to check</param>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.GraphicsCheckUtil.GraphicsHandler">
+            <summary>Helper class that checks the conformance of graphics tags while iterating the tag tree structure.
+                </summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.GraphicsCheckUtil.GraphicsHandler.#ctor(iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new instance of the
+            <see cref="T:iText.Pdfua.Checkers.Utils.GraphicsCheckUtil.GraphicsHandler"/>.
+            </summary>
+            <param name="context">The validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.GraphicsCheckUtil.GraphicsHandler.NextElement(iText.Kernel.Pdf.Tagging.IStructureNode)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.Headings.HeadingsChecker">
+            <summary>Utility class which performs headings check according to PDF/UA specification.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Headings.HeadingsChecker.#ctor(iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new instance of
+            <see cref="T:iText.Pdfua.Checkers.Utils.Headings.HeadingsChecker"/>.
+            </summary>
+            <param name="context">The validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Headings.HeadingsChecker.CheckLayoutElement(System.Object)">
+            <summary>Checks if layout element has correct heading.</summary>
+            <param name="rendererObj">layout element to check</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Headings.HeadingsChecker.CheckStructElement(iText.Kernel.Pdf.Tagging.IStructureNode)">
+            <summary>Checks if structure element has correct heading.</summary>
+            <param name="structNode">structure element to check</param>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.Headings.HeadingsChecker.HeadingHandler">
+            <summary>Handler class that checks heading tags while traversing the tag tree.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Headings.HeadingsChecker.HeadingHandler.#ctor(iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new instance of
+            <see cref="T:iText.Pdfua.Checkers.Utils.Headings.HeadingsChecker"/>.
+            </summary>
+            <param name="context">The validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Headings.HeadingsChecker.HeadingHandler.NextElement(iText.Kernel.Pdf.Tagging.IStructureNode)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.LayoutCheckUtil">
+            <summary>Utility class for delegating the layout checks to the correct checking logic.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.LayoutCheckUtil.#ctor(iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new
+            <see cref="T:iText.Pdfua.Checkers.Utils.LayoutCheckUtil"/>
+            instance.
+            </summary>
+            <param name="context">The validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.LayoutCheckUtil.CheckLayoutElements(System.Object)">
+            <summary>WARNING! This method is an artifact and currently does nothing.</summary>
+            <remarks>
+            WARNING! This method is an artifact and currently does nothing.
+            It is kept to ensure backward binary compatibility
+            </remarks>
+            <param name="rendererObj">layout element to check</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.LayoutCheckUtil.CheckRenderer(System.Object)">
+            <summary>Checks renderer for PDF UA compliance.</summary>
+            <param name="rendererObj">The renderer to check.</param>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.NoteCheckUtil">
+            <summary>Utility class for delegating notes checks to the correct checking logic.</summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.NoteCheckUtil.NoteTagHandler">
+            <summary>Handler for checking Note elements in the TagTree.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.NoteCheckUtil.NoteTagHandler.#ctor(iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new
+            <see cref="T:iText.Pdfua.Checkers.Utils.NoteCheckUtil.NoteTagHandler"/>
+            instance.
+            </summary>
+            <param name="context">The validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.NoteCheckUtil.NoteTagHandler.NextElement(iText.Kernel.Pdf.Tagging.IStructureNode)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.PdfUAValidationContext">
+            <summary>This class keeps track of useful information when validating a PdfUaDocument.</summary>
+            <remarks>
+            This class keeps track of useful information when validating a PdfUaDocument.
+            It also contains some useful utility functions that help with PDF UA validation.
+            </remarks>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.PdfUAValidationContext.#ctor(iText.Kernel.Pdf.PdfDocument)">
+            <summary>
+            Creates a new instance of
+            <see cref="T:iText.Pdfua.Checkers.Utils.PdfUAValidationContext"/>.
+            </summary>
+            <param name="pdfDocument">The pdfDocument where the validation is happening.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.PdfUAValidationContext.ResolveToStandardRole(iText.Kernel.Pdf.Tagging.IStructureNode)">
+            <summary>Resolves the node's role to a standard role.</summary>
+            <param name="node">The node you want to resolve the standard role for.</param>
+            <returns>The role.</returns>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.PdfUAValidationContext.ResolveToStandardRole(System.String)">
+            <summary>Resolves the  role to a standard role</summary>
+            <param name="role">The role you want to resolve the standard role for.</param>
+            <returns>The role.</returns>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.PdfUAValidationContext.GetElementIfRoleMatches(iText.Kernel.Pdf.PdfName,iText.Kernel.Pdf.Tagging.IStructureNode)">
+            <summary>
+            Checks if a
+            <see cref="T:iText.Kernel.Pdf.Tagging.IStructureNode"/>
+            resolved role's is equal to the provided role.
+            </summary>
+            <remarks>
+            Checks if a
+            <see cref="T:iText.Kernel.Pdf.Tagging.IStructureNode"/>
+            resolved role's is equal to the provided role.
+            <para />
+            Note: This  method will not check recursive mapping. So either the node's role is the provided role,
+            or the standard role is the provided role. So we do not take into account the roles in between the mappings.
+            </remarks>
+            <param name="role">The role we want to check against.</param>
+            <param name="structureNode">The structure node we want to check.</param>
+            <returns>
+            The
+            <see cref="T:iText.Kernel.Pdf.Tagging.PdfStructElem"/>
+            if the role matches.
+            </returns>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.Tables.AbstractResultMatrix`1">
+            <summary>Class that represents a matrix of cells in a table.</summary>
+            <remarks>
+            Class that represents a matrix of cells in a table.
+            It is used to check if the table has valid headers and scopes for the cells.
+            </remarks>
+            <typeparam name="T">The type of the cell.</typeparam>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.AbstractResultMatrix`1.#ctor(iText.Pdfua.Checkers.Utils.Tables.ITableIterator{`0})">
+            <summary>
+            Creates a new
+            <see cref="T:iText.Pdfua.Checkers.Utils.Tables.AbstractResultMatrix`1"/>
+            instance.
+            </summary>
+            <param name="iterator">The iterator that will be used to iterate over the cells.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.AbstractResultMatrix`1.CheckValidTableTagging">
+            <summary>Runs the algorithm to check if the table has valid headers and scopes for the cells.</summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.Tables.CellResultMatrix">
+            <summary>Class that has the result of the algorithm that checks the table for PDF/UA compliance.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.CellResultMatrix.#ctor(iText.Layout.Element.Table,iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new
+            <see cref="T:iText.Pdfua.Checkers.Utils.Tables.CellResultMatrix"/>
+            instance.
+            </summary>
+            <param name="table">The table that needs to be checked.</param>
+            <param name="context">The validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.CellResultMatrix.GetHeaders(iText.Layout.Element.Cell)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.CellResultMatrix.GetScope(iText.Layout.Element.Cell)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.CellResultMatrix.GetElementId(iText.Layout.Element.Cell)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.CellResultMatrix.GetRole(iText.Layout.Element.Cell)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.Tables.ITableIterator`1">
+            <summary>Interface that provides methods for iterating over the elements of a table.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.ITableIterator`1.HasNext">
+            <summary>Checks if there is a next element in the iteration.</summary>
+            <returns>
+            
+            <see langword="true"/>
+            if there is a next element,
+            <see langword="false"/>
+            otherwise.
+            </returns>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.ITableIterator`1.Next">
+            <summary>Gets the next element in the iteration.</summary>
+            <returns>The next element.</returns>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.ITableIterator`1.GetAmountOfRowsBody">
+            <summary>Gets the number of rows in the body of the table.</summary>
+            <returns>The number of rows in the body of the table.</returns>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.ITableIterator`1.GetAmountOfRowsHeader">
+            <summary>Gets the number of rows in the header of the table.</summary>
+            <returns>The number of rows in the header of the table.</returns>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.ITableIterator`1.GetAmountOfRowsFooter">
+            <summary>Gets the number of rows in the footer of the table.</summary>
+            <returns>The number of rows in the footer of the table.</returns>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.ITableIterator`1.GetNumberOfColumns">
+            <summary>Returns the amount of columns the table has.</summary>
+            <remarks>
+            Returns the amount of columns the table has.
+            All rows in a table in UA specification must have the same column count.
+            So return the max column count for correctly generated error messages.
+            </remarks>
+            <returns>the amount of columns</returns>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.ITableIterator`1.GetRow">
+            <summary>Gets the row index of the current position.</summary>
+            <returns>The row index.</returns>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.ITableIterator`1.GetCol">
+            <summary>Gets the column index of current position.</summary>
+            <returns>The column index.</returns>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.ITableIterator`1.GetRowspan">
+            <summary>Gets the rowspan of current position.</summary>
+            <returns>the rowspan</returns>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.ITableIterator`1.GetColspan">
+            <summary>Gets the colspan of the current position</summary>
+            <returns>the colspan of current position</returns>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.Tables.StructTreeResultMatrix">
+            <summary>The result matrix to validate PDF UA1 tables based on the TagTreeStructure of the document.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.StructTreeResultMatrix.#ctor(iText.Kernel.Pdf.Tagging.PdfStructElem,iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new
+            <see cref="T:iText.Pdfua.Checkers.Utils.Tables.StructTreeResultMatrix"/>
+            instance.
+            </summary>
+            <param name="elem">a table structure element.</param>
+            <param name="context">The validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.StructTreeResultMatrix.GetHeaders(iText.Kernel.Pdf.Tagging.PdfStructElem)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.StructTreeResultMatrix.GetScope(iText.Kernel.Pdf.Tagging.PdfStructElem)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.StructTreeResultMatrix.GetElementId(iText.Kernel.Pdf.Tagging.PdfStructElem)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.StructTreeResultMatrix.GetRole(iText.Kernel.Pdf.Tagging.PdfStructElem)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.Tables.TableCellIterator">
+            <summary>Class that iterates over the cells of a table.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCellIterator.#ctor(iText.Layout.Element.Table,iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new
+            <see cref="T:iText.Pdfua.Checkers.Utils.Tables.TableCellIterator"/>
+            instance.
+            </summary>
+            <param name="table">the table that will be iterated.</param>
+            <param name="context">the validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCellIterator.HasNext">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCellIterator.Next">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCellIterator.GetAmountOfRowsBody">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCellIterator.GetAmountOfRowsHeader">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCellIterator.GetAmountOfRowsFooter">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCellIterator.GetNumberOfColumns">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCellIterator.GetRow">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCellIterator.GetCol">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCellIterator.GetRowspan">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCellIterator.GetColspan">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.Tables.TableCheckUtil">
+            <summary>Class that provides methods for checking PDF/UA compliance of table elements.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCheckUtil.#ctor(iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new
+            <see cref="T:iText.Pdfua.Checkers.Utils.Tables.TableCheckUtil"/>
+            instance.
+            </summary>
+            <param name="context">the validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCheckUtil.CheckLayoutTable(iText.Layout.Element.Table)">
+            <summary>WARNING! This method is an artifact and currently does nothing.</summary>
+            <remarks>
+            WARNING! This method is an artifact and currently does nothing.
+            It is kept to ensure backward binary compatibility
+            </remarks>
+            <param name="table">the table to check.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCheckUtil.CheckTable(iText.Layout.Element.Table)">
+            <summary>Checks if the table is pdf/ua compliant.</summary>
+            <param name="table">the table to check.</param>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.Tables.TableCheckUtil.TableHandler">
+            <summary>Handler class that checks table tags.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCheckUtil.TableHandler.#ctor(iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new instance of
+            <see cref="T:iText.Pdfua.Checkers.Utils.Tables.TableCheckUtil.TableHandler"/>.
+            </summary>
+            <param name="context">the validationContext</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableCheckUtil.TableHandler.NextElement(iText.Kernel.Pdf.Tagging.IStructureNode)">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.Tables.TableStructElementIterator">
+            <summary>Creates an iterator to iterate over the table structures.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableStructElementIterator.#ctor(iText.Kernel.Pdf.Tagging.PdfStructElem,iText.Pdfua.Checkers.Utils.PdfUAValidationContext)">
+            <summary>
+            Creates a new
+            <see cref="T:iText.Pdfua.Checkers.Utils.Tables.TableStructElementIterator"/>
+            instance.
+            </summary>
+            <param name="tableStructElem">the root table struct element.</param>
+            <param name="context">the validation context.</param>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableStructElementIterator.HasNext">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableStructElementIterator.Next">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableStructElementIterator.GetAmountOfRowsBody">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableStructElementIterator.GetAmountOfRowsHeader">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableStructElementIterator.GetAmountOfRowsFooter">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableStructElementIterator.GetNumberOfColumns">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableStructElementIterator.GetRow">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableStructElementIterator.GetCol">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableStructElementIterator.GetRowspan">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.Tables.TableStructElementIterator.GetColspan">
+            <summary><inheritDoc/></summary>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.TagTreeHandlerUtil">
+            <summary>Utility class that contains utility methods used  when working with the TagTreeHandler</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.TagTreeHandlerUtil.GetElementIfRoleMatches(iText.Kernel.Pdf.PdfName,iText.Kernel.Pdf.Tagging.IStructureNode)">
+            <summary>
+            Gets the
+            <see cref="T:iText.Kernel.Pdf.Tagging.PdfStructElem"/>
+            if the element matches the provided role and the structureNode is indeed an
+            <see cref="T:iText.Kernel.Pdf.Tagging.PdfStructElem"/>
+            </summary>
+            <param name="role">The role that needs to be matched.</param>
+            <param name="structureNode">The structure node.</param>
+            <returns>
+            The
+            <see cref="T:iText.Kernel.Pdf.Tagging.PdfStructElem"/>
+            if the structure matches the role.
+            </returns>
+        </member>
+        <member name="T:iText.Pdfua.Checkers.Utils.XfaCheckUtil">
+            <summary>Utility class which performs XFA forms check according to PDF/UA specification.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Checkers.Utils.XfaCheckUtil.Check(iText.Kernel.Pdf.PdfDocument)">
+            <summary>Checks XFA form of the document if exists.</summary>
+            <param name="pdfDocument">the document to check</param>
+        </member>
+        <member name="T:iText.Pdfua.Exceptions.PdfUAConformanceException">
+            <summary>Exception that is thrown when the PDF Document doesn't adhere to the PDF/UA specification.</summary>
+        </member>
+        <member name="M:iText.Pdfua.Exceptions.PdfUAConformanceException.#ctor(System.String)">
+            <summary>Creates a PdfUAConformanceException.</summary>
+            <param name="message">the error message</param>
+        </member>
+        <member name="M:iText.Pdfua.Exceptions.PdfUAConformanceException.#ctor(System.String,System.Exception)">
+            <summary>Creates a PdfUAConformanceException.</summary>
+            <param name="message">the detail message.</param>
+            <param name="cause">the cause.</param>
+        </member>
+        <member name="T:iText.Pdfua.Exceptions.PdfUAExceptionMessageConstants">
+            <summary>Class that bundles all the error message templates as constants.</summary>
+        </member>
+        <member name="T:iText.Pdfua.Exceptions.PdfUALogMessageConstants">
+            <summary>Class containing the log message constants.</summary>
+        </member>
+        <member name="T:iText.Pdfua.PdfUAConfig">
+            <summary>Class that holds the configuration for the PDF/UA document.</summary>
+        </member>
+        <member name="M:iText.Pdfua.PdfUAConfig.#ctor(iText.Kernel.Pdf.PdfUAConformanceLevel,System.String,System.String)">
+            <summary>Creates a new PdfUAConfig instance.</summary>
+            <param name="conformanceLevel">The conformance level of the PDF/UA document.</param>
+            <param name="title">The title of the PDF/UA document.</param>
+            <param name="language">The language of the PDF/UA document.</param>
+        </member>
+        <member name="M:iText.Pdfua.PdfUAConfig.GetConformanceLevel">
+            <summary>Gets the conformance level.</summary>
+            <returns>
+            The
+            <see cref="T:iText.Kernel.Pdf.PdfUAConformanceLevel"/>.
+            </returns>
+        </member>
+        <member name="M:iText.Pdfua.PdfUAConfig.GetTitle">
+            <summary>Gets the title.</summary>
+            <returns>The title.</returns>
+        </member>
+        <member name="M:iText.Pdfua.PdfUAConfig.GetLanguage">
+            <summary>Gets the language.</summary>
+            <returns>The language.</returns>
+        </member>
+        <member name="T:iText.Pdfua.PdfUADocument">
+            <summary>Creates a Pdf/UA document.</summary>
+            <remarks>
+            Creates a Pdf/UA document.
+            This class is an extension of PdfDocument and adds the necessary configuration for PDF/UA conformance.
+            It will add necessary validation to guide the user to create a PDF/UA compliant document.
+            </remarks>
+        </member>
+        <member name="M:iText.Pdfua.PdfUADocument.#ctor(iText.Kernel.Pdf.PdfWriter,iText.Pdfua.PdfUAConfig)">
+            <summary>Creates a PdfUADocument instance.</summary>
+            <param name="writer">The writer to write the PDF document.</param>
+            <param name="config">The configuration for the PDF/UA document.</param>
+        </member>
+        <member name="M:iText.Pdfua.PdfUADocument.#ctor(iText.Kernel.Pdf.PdfWriter,iText.Kernel.Pdf.DocumentProperties,iText.Pdfua.PdfUAConfig)">
+            <summary>Creates a PdfUADocument instance.</summary>
+            <param name="writer">The writer to write the PDF document.</param>
+            <param name="properties">The properties for the PDF document.</param>
+            <param name="config">The configuration for the PDF/UA document.</param>
+        </member>
+        <member name="M:iText.Pdfua.PdfUADocument.#ctor(iText.Kernel.Pdf.PdfReader,iText.Kernel.Pdf.PdfWriter,iText.Pdfua.PdfUAConfig)">
+            <summary>Creates a PdfUADocument instance.</summary>
+            <param name="reader">The reader to read the PDF document.</param>
+            <param name="writer">The writer to write the PDF document.</param>
+            <param name="config">The configuration for the PDF/UA document.</param>
+        </member>
+        <member name="M:iText.Pdfua.PdfUADocument.#ctor(iText.Kernel.Pdf.PdfReader,iText.Kernel.Pdf.PdfWriter,iText.Kernel.Pdf.StampingProperties,iText.Pdfua.PdfUAConfig)">
+            <summary>Creates a PdfUADocument instance.</summary>
+            <param name="reader">The reader to read the PDF document.</param>
+            <param name="writer">The writer to write the PDF document.</param>
+            <param name="properties">The properties for the PDF document.</param>
+            <param name="config">The configuration for the PDF/UA document.</param>
+        </member>
+        <member name="M:iText.Pdfua.PdfUADocument.GetConformanceLevel">
+            <summary>{inheritDoc}</summary>
+        </member>
+        <member name="M:iText.Pdfua.PdfUADocument.GetPageFactory">
+            <returns>The PageFactory for the PDF/UA document.</returns>
+        </member>
+        <member name="M:iText.Pdfua.PdfUADocument.IsClosing">
+            <summary>Returns if the document is in the closing state.</summary>
+            <returns>true if the document is closing, false otherwise.</returns>
+        </member>
+        <member name="M:iText.Pdfua.PdfUADocument.WarnOnPageFlush">
+            <summary>Warns the user that the page is being flushed.</summary>
+            <remarks>
+            Warns the user that the page is being flushed.
+            Will only warn once.
+            </remarks>
+        </member>
+        <member name="M:iText.Pdfua.PdfUADocument.DisablePageFlushingWarning">
+            <summary>Disables the warning for page flushing.</summary>
+        </member>
+        <member name="M:iText.Pdfua.PdfUAPageFactory.CreatePdfPage(iText.Kernel.Pdf.PdfDictionary)">
+            <param name="pdfObject">
+            the
+            <see cref="T:iText.Kernel.Pdf.PdfDictionary"/>
+            object on which the
+            <see cref="T:iText.Kernel.Pdf.PdfPage"/>
+            will be based
+            </param>
+            <returns>The pdf page.</returns>
+        </member>
+        <member name="M:iText.Pdfua.PdfUAPageFactory.CreatePdfPage(iText.Kernel.Pdf.PdfDocument,iText.Kernel.Geom.PageSize)">
+            <param name="pdfDocument">
+            
+            <see cref="T:iText.Kernel.Pdf.PdfDocument"/>
+            to add page
+            </param>
+            <param name="pageSize">
+            
+            <see cref="T:iText.Kernel.Geom.PageSize"/>
+            of the created page
+            </param>
+            <returns>The Pdf page.</returns>
+        </member>
+    </members>
+</doc>

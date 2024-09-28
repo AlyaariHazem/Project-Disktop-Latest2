@@ -15,8 +15,8 @@ namespace MySchool.userControl
         public UserControlReports()
         {
             InitializeComponent();
-           // InitializeReportGrid();
-           // LoadReportData();
+            //InitializeReportGrid();
+            // LoadReportData();
         }
 
         private void InitializeReportGrid()
@@ -67,6 +67,11 @@ namespace MySchool.userControl
         }
 
         private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

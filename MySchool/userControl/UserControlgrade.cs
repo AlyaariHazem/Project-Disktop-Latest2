@@ -37,7 +37,7 @@ namespace MySchool.userControl
             tool.ApplyNumberValidation(txt_shfahi, 0, 10);
             tool.ApplyNumberValidation(txt_attendance, 0, 10);
             tool.ApplyNumberValidation(txt_testing, 0, 40);
-
+            tool.StyleDataGridView(guna2DataGridView2);
         }
 
         private void guna2GroupBox1_Click(object sender, EventArgs e)
@@ -122,8 +122,8 @@ namespace MySchool.userControl
                     var students = db1.Students.Where(s => s.Divisions.Classes.ClassName == compo_class.Text && s.Divisions.DivisionName == compo_division.Text).ToList();
                     foreach (var student in students)
                     {
-
-
+                        MessageBox.Show("you can't", "error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                        DialogResult r= MessageBox.Show("you can't", "error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
 
                         using (var db = new DatabaseHelper())
                         {

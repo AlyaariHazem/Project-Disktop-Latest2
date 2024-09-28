@@ -244,6 +244,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TOOLS_HELPER\tools.cs" />
+    <Compile Include="userControl\Backup.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\Backup.Designer.cs">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </Compile>
     <Compile Include="userControl\Reports\UserControlCertifcate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -279,6 +285,12 @@
     </Compile>
     <Compile Include="userControl\UserControlgrade.Designer.cs">
       <DependentUpon>UserControlgrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userControl\UserControlSchoolInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="userControl\UserControlSchoolInfo.Designer.cs">
+      <DependentUpon>UserControlSchoolInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="userControl\UserControlStudents.cs">
       <SubType>UserControl</SubType>
@@ -329,6 +341,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="userControl\Backup.resx">
+      <DependentUpon>Backup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userControl\Reports\UserControlCertifcate.resx">
       <DependentUpon>UserControlCertifcate.cs</DependentUpon>
     </EmbeddedResource>
@@ -346,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\UserControlgrade.resx">
       <DependentUpon>UserControlgrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userControl\UserControlSchoolInfo.resx">
+      <DependentUpon>UserControlSchoolInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="userControl\UserControlStudents.resx">
       <DependentUpon>UserControlStudents.cs</DependentUpon>

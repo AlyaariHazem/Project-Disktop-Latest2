@@ -147,9 +147,57 @@ namespace Myschool.Helpers
 
 
 
+        public void BackupDatabase(string databaseName, string destinationPath)
+        {
+            try
+            {
+                OpenConnection();
+                string sqlBackup = $@"
+                    BACKUP DATABASE [{databaseName}] 
+                    TO DISK = '{destinationPath}' 
+                    WITH INIT;";
+
+                using (SqlCommand cmd = new SqlCommand(sqlBackup, _connection))
+                {
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("تم انشاء نسخة احتياطية بنجاح.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
 
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+        public void RestoreDatabase(string databaseName, string backupFilePath)
+        {
+            try
+            {
+                OpenConnection();
+                string sqlRestore = $@"
+                    USE master;
+                    ALTER DATABASE [{databaseName}] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+                    RESTORE DATABASE [{databaseName}] FROM DISK = '{backupFilePath}' WITH REPLACE;
+                    ALTER DATABASE [{databaseName}] SET MULTI_USER;";
+                using (SqlCommand cmd = new SqlCommand(sqlRestore, _connection))
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("لم استعادة قاعدة البيانات بنجاح", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
 
 
 

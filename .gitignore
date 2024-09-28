@@ -3,11 +3,7 @@
 .vs/
 bin/
 obj/
-packages/
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
+
 
 # Ignore directories for temporary and backup files
 **/*_backup/

@@ -59,9 +59,9 @@
             System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("الشهادات", new System.Windows.Forms.TreeNode[] {
             treeNode16,
             treeNode17});
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("العطل");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("النسخ الأحتياطي");
             System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("الحسابات");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("المدونات");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("عننا");
             System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("الإدارة");
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -127,9 +127,10 @@
             this.guna2Panel1.Controls.Add(this.guna2PictureBox5);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox4);
             this.guna2Panel1.Controls.Add(this.guna2PictureBox3);
-            this.guna2Panel1.Location = new System.Drawing.Point(255, 4);
+            this.guna2Panel1.Location = new System.Drawing.Point(191, 3);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(1070, 64);
+            this.guna2Panel1.Size = new System.Drawing.Size(802, 52);
             this.guna2Panel1.TabIndex = 1;
             // 
             // guna2PictureBox5
@@ -137,9 +138,10 @@
             this.guna2PictureBox5.BorderRadius = 8;
             this.guna2PictureBox5.Image = global::MySchool.Properties.Resources.icon_23;
             this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(162, 7);
+            this.guna2PictureBox5.Location = new System.Drawing.Point(122, 6);
+            this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(65, 48);
+            this.guna2PictureBox5.Size = new System.Drawing.Size(49, 39);
             this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox5.TabIndex = 5;
             this.guna2PictureBox5.TabStop = false;
@@ -149,9 +151,10 @@
             this.guna2PictureBox4.BorderRadius = 8;
             this.guna2PictureBox4.Image = global::MySchool.Properties.Resources.icon_22;
             this.guna2PictureBox4.ImageRotate = 0F;
-            this.guna2PictureBox4.Location = new System.Drawing.Point(99, 10);
+            this.guna2PictureBox4.Location = new System.Drawing.Point(74, 8);
+            this.guna2PictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2PictureBox4.Name = "guna2PictureBox4";
-            this.guna2PictureBox4.Size = new System.Drawing.Size(51, 40);
+            this.guna2PictureBox4.Size = new System.Drawing.Size(38, 32);
             this.guna2PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox4.TabIndex = 5;
             this.guna2PictureBox4.TabStop = false;
@@ -162,9 +165,10 @@
             this.guna2PictureBox3.BorderRadius = 15;
             this.guna2PictureBox3.Image = global::MySchool.Properties.Resources.user_061;
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(22, 9);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(16, 7);
+            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(64, 48);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(48, 39);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox3.TabIndex = 5;
             this.guna2PictureBox3.TabStop = false;
@@ -177,18 +181,20 @@
             this.guna2Panel2.BorderThickness = 1;
             this.guna2Panel2.Controls.Add(this.label1);
             this.guna2Panel2.Controls.Add(this.guna2PictureBox1);
-            this.guna2Panel2.Location = new System.Drawing.Point(3, 4);
+            this.guna2Panel2.Location = new System.Drawing.Point(2, 3);
+            this.guna2Panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(250, 64);
+            this.guna2Panel2.Size = new System.Drawing.Size(188, 52);
             this.guna2Panel2.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(60, 17);
+            this.label1.Location = new System.Drawing.Point(45, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(86, 31);
+            this.label1.Size = new System.Drawing.Size(70, 26);
             this.label1.TabIndex = 6;
             this.label1.Text = "مدرستي";
             // 
@@ -196,9 +202,10 @@
             // 
             this.guna2PictureBox1.Image = global::MySchool.Properties.Resources.logo1;
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(173, 5);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(130, 4);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(74, 56);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(56, 46);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox1.TabIndex = 5;
             this.guna2PictureBox1.TabStop = false;
@@ -209,7 +216,8 @@
             this.treeView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.treeView1.ImageIndex = 0;
             this.treeView1.ImageList = this.imageList1;
-            this.treeView1.Location = new System.Drawing.Point(3, 130);
+            this.treeView1.Location = new System.Drawing.Point(2, 106);
+            this.treeView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.treeView1.Name = "treeView1";
             treeNode1.Name = "Node10";
             treeNode1.Text = "معلومات المدرسة";
@@ -258,13 +266,13 @@
             treeNode18.Text = "الشهادات";
             treeNode19.ImageKey = "icon-8.png";
             treeNode19.Name = "Node6";
-            treeNode19.Text = "العطل";
+            treeNode19.Text = "النسخ الأحتياطي";
             treeNode20.ImageKey = "icon-10.png";
             treeNode20.Name = "Node7";
             treeNode20.Text = "الحسابات";
             treeNode21.ImageKey = "icon-17.png";
             treeNode21.Name = "Node8";
-            treeNode21.Text = "المدونات";
+            treeNode21.Text = "عننا";
             treeNode22.ImageKey = "icon-20.png";
             treeNode22.Name = "Node9";
             treeNode22.Text = "الإدارة";
@@ -283,7 +291,7 @@
             this.treeView1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.treeView1.RightToLeftLayout = true;
             this.treeView1.SelectedImageIndex = 0;
-            this.treeView1.Size = new System.Drawing.Size(250, 682);
+            this.treeView1.Size = new System.Drawing.Size(188, 555);
             this.treeView1.TabIndex = 3;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 
@@ -295,18 +303,20 @@
             this.guna2Panel3.BorderThickness = 1;
             this.guna2Panel3.Controls.Add(this.label3);
             this.guna2Panel3.Controls.Add(this.guna2PictureBox2);
-            this.guna2Panel3.Location = new System.Drawing.Point(3, 67);
+            this.guna2Panel3.Location = new System.Drawing.Point(2, 54);
+            this.guna2Panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2Panel3.Name = "guna2Panel3";
-            this.guna2Panel3.Size = new System.Drawing.Size(250, 64);
+            this.guna2Panel3.Size = new System.Drawing.Size(188, 52);
             this.guna2Panel3.TabIndex = 3;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 18);
+            this.label3.Location = new System.Drawing.Point(18, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(161, 31);
+            this.label3.Size = new System.Drawing.Size(131, 26);
             this.label3.TabIndex = 6;
             this.label3.Text = "الصفحة الرئيسية";
             // 
@@ -314,33 +324,36 @@
             // 
             this.guna2PictureBox2.Image = global::MySchool.Properties.Resources.icon_1;
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(189, 9);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(142, 7);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(49, 43);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(37, 35);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2PictureBox2.TabIndex = 5;
             this.guna2PictureBox2.TabStop = false;
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(255, 72);
+            this.panel1.Location = new System.Drawing.Point(191, 58);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1066, 727);
+            this.panel1.Size = new System.Drawing.Size(800, 591);
             this.panel1.TabIndex = 4;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1329, 801);
+            this.ClientSize = new System.Drawing.Size(997, 651);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.guna2Panel3);
             this.Controls.Add(this.treeView1);
             this.Controls.Add(this.guna2Panel2);
             this.Controls.Add(this.guna2Panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Dashboard";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.RightToLeftLayout = true;

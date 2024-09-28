@@ -75,6 +75,18 @@ namespace MySchool.Forms
             {
                 LoadUserControlAddStudent();
             }
+            else if (message.ToLower() == "عننا")
+            {
+                LoadUserControlaboutUs();
+            }
+            else if (message.ToLower() == "معلومات المدرسة")
+            {
+                LoadUserControlSchoolInfo();
+            }
+            else if (message.ToLower() == "النسخ الأحتياطي")
+            {
+                LoadUserControlBackup();
+            }
 
         }
 
@@ -155,7 +167,36 @@ namespace MySchool.Forms
 
             panel1.Controls.Add(userControlSubjects);
         }
+        private void LoadUserControlaboutUs()
+        {
+            panel1.Controls.Clear();
 
+            UserControl1AboutUscs userControl1AboutUscs = new UserControl1AboutUscs();
+
+            userControl1AboutUscs.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(userControl1AboutUscs);
+        }
+        private void LoadUserControlSchoolInfo()
+        {
+            panel1.Controls.Clear();
+
+            UserControlSchoolInfo userControlSchoolInfo = new UserControlSchoolInfo();
+
+            userControlSchoolInfo.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(userControlSchoolInfo);
+        }
+        private void LoadUserControlBackup()
+        {
+            panel1.Controls.Clear();
+
+            Backup backup = new Backup();
+
+            backup.Dock = DockStyle.Fill;
+
+            panel1.Controls.Add(backup);
+        }
 
         private void LoadUserControlgrades()
         {

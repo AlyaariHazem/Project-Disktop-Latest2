@@ -41,7 +41,7 @@ namespace MySchool.userControl
                 {"Delete", ("حذف", "حذف")}
             });
 
-
+            tool.StyleDataGridView(guna2DataGridView2);
 
             loaddata();
 
