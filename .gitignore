@@ -16,7 +16,6 @@ npm-debug.log*
 
 # Ignore compiled code
 *.dll
-*.exe
 *.log
 *.sql
 *.sqlite
